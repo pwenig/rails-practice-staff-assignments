@@ -11,7 +11,7 @@
   <% @people.each do |person| %>
     <tr>
       <td>
-        <%= person.title %> <%= person.first_name %> <%= person.last_name %>
+        <a href='/people/<%= person.id %>'><%= person.title %> <%= person.first_name %> <%= person.last_name %></a>
       </td>
     </tr>
   <% end %>
