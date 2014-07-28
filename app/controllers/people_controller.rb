@@ -10,6 +10,19 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params[:id])
+  end
+
+  def edit
+    @person = Person.find(params[:id])
+  end
+
+  def update
+    @person = Person.find(params[:id])
+    @person.title = params[:title]
+    @person.first_name = params[:person][:first_name]
+    @person.last_name = params[:person][:last_name]
+    @person.save
+    redirect_to root_path, notice: "Person was updated!"
 
   end
 
