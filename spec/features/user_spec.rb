@@ -33,7 +33,7 @@ feature User do
     click_on 'Update Person'
 
     expect(page).to have_content "John Jones"
-
-
   end
+
+
 end

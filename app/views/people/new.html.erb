@@ -1,3 +1,8 @@
+
+<% @person.errors.each do |attribute, message| %>
+  <%= message %>
+<% end %>
+
 <h1>Add a Staff Member</h1>
 
 <%= form_for @person do |f| %>

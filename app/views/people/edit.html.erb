@@ -1,3 +1,7 @@
+<% @person.errors.each do |attribute, message| %>
+  <%= message %>
+<% end %>
+
 <h2>Edit</h2>
 
 <%= form_for @person do |f| %>

@@ -21,9 +21,12 @@ class PeopleController < ApplicationController
     @person.title = params[:title]
     @person.first_name = params[:person][:first_name]
     @person.last_name = params[:person][:last_name]
-    @person.save
-    redirect_to root_path, notice: "Person was updated!"
+    if @person.save
+      redirect_to root_path, notice: "Person was updated!"
+    else
+      render :edit
 
+    end
   end
 
 
