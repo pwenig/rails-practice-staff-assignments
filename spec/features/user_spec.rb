@@ -35,5 +35,27 @@ feature User do
     expect(page).to have_content "John Jones"
   end
 
+  scenario 'User can add a user to a location' do
+    create_user email: "user@example.com"
+    create_person
+    location = Location.create!(name: "Chicago")
+
+    visit root_path
+    fill_in "Email", with: "user@example.com"
+    fill_in "Password", with: "password"
+    click_on "Login"
+
+    click_on 'Mr. Jim Jones'
+    click_on '+ Add Location'
+
+    select "Chicago", from: "assignment_location_id"
+    fill_in "Role", with: "Supervisor"
+
+    click_on "Assign"
+
+    expect(page).to have_content "Jim Jones"
+    expect(page).to have_content "Chicago"
+    expect(page).to have_content "Supervisor"
+  end
 
 end

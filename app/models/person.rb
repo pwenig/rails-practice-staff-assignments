@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-
+has_many :assignments
   validate :custom_validate
 
   def custom_validate
