@@ -38,7 +38,7 @@ feature User do
   scenario 'User can add a user to a location' do
     create_user email: "user@example.com"
     create_person
-    location = Location.create!(name: "Chicago")
+    Location.create!(name: "Chicago")
 
     visit root_path
     fill_in "Email", with: "user@example.com"
