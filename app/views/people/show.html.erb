@@ -4,8 +4,8 @@
 <br>
 
 <% @person.assignments.each do |assignment| %>
-  <%= assignment.location.name %>
-  <%= assignment.role %>
+  <%= assignment.location.name %> <%= assignment.role %>
+  <br>
   <% end %>
 <br>
 <br>
